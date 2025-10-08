@@ -7,6 +7,9 @@
 // Plugin URI: test.com 
 
 // admin menu
+
+use SimplePie\Sanitize;
+
 add_action('admin_menu','tbcsv_page');
 
 function tbcsv_page(){
@@ -36,14 +39,14 @@ function export_table_data_csv(){
 if(isset($_POST['tbcsv_button'])){
         global $wpdb;
 
-    $table_name = $wpdb->prefix.'csv_plugin_data';
+    $table_name = sanitize_text_field($_POST['csv_table']);
 
     $data = $wpdb->get_results(
         "SELECT * FROM {$table_name}",ARRAY_A
     );
 
     if(empty($data)){
-    wp_redirect(admin_url('admin.php?page=csv-table-backup&csv_export=empty'));
+    // wp_redirect(admin_url('admin.php?page=csv-table-backup&csv_export=empty'));
             exit;
     }
 
