@@ -36,7 +36,7 @@ echo  $template;
 add_action('admin_init','export_table_data_csv');
 
 function export_table_data_csv(){
-if(isset($_POST['tbcsv_button'])){
+if(isset($_POST['tbcsv_button']) && !empty($_POST['csv_table'])){
         global $wpdb;
 
     $table_name = sanitize_text_field($_POST['csv_table']);
@@ -45,12 +45,17 @@ if(isset($_POST['tbcsv_button'])){
         "SELECT * FROM {$table_name}",ARRAY_A
     );
 
-    if(empty($data)){
-    // wp_redirect(admin_url('admin.php?page=csv-table-backup&csv_export=empty'));
-            exit;
-    }
+if (empty($data)) {
+     add_action('admin_notices', function() use ($table_name) {
+                echo '<div class="notice notice-warning is-dismissible">
+                        <p><strong>No data found in table:</strong> ' . esc_html($table_name) . '</p>
+                      </div>';
+            });
+            return; 
+}
 
-    $filename = 'csv-table-data-'.time().'.csv';
+    else{
+          $filename = 'csv-table-data-'.time().'.csv';
 
     header("Content-Type: text/csv; charset=utf-8;");
     header('Content-Disposition: attachment; filename='.$filename);
@@ -68,16 +73,17 @@ if(isset($_POST['tbcsv_button'])){
 
 exit;
 
-}
-
-}
-
-add_action('admin_notices', function(){
-    if(isset($_GET['csv_export'])){
-        if($_GET['csv_export'] == 'success'){
-            echo '<div class="notice notice-success is-dismissible"><p>CSV exported successfully!</p></div>';
-        } elseif($_GET['csv_export'] == 'empty'){
-            echo '<div class="notice notice-error is-dismissible"><p>Table is empty, no CSV exported.</p></div>';
-        }
     }
-});
+}
+
+}
+
+// add_action('admin_notices', function(){
+//     if(isset($_GET['csv_export'])){
+//         if($_GET['csv_export'] == 'success'){
+//             echo '<div class="notice notice-success is-dismissible"><p>CSV exported successfully!</p></div>';
+//         } elseif($_GET['csv_export'] == 'empty'){
+//             echo '<div class="notice notice-error is-dismissible"><p>Table is empty, no CSV exported.</p></div>';
+//         }
+//     }
+// });
