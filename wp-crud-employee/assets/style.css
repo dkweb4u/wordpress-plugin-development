@@ -1,0 +1,141 @@
+/* Wrapper */
+.wp_crud_emp_plugin {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+/* Title */
+.wp_crud_emp_plugin h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #23282d;
+}
+
+/* Form styling */
+.wp_crud_emp_plugin form p {
+    margin-bottom: 15px;
+}
+
+.wp_crud_emp_plugin label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: #23282d;
+}
+
+.wp_crud_emp_plugin input[type="text"],
+.wp_crud_emp_plugin input[type="email"],
+.wp_crud_emp_plugin select,
+.wp_crud_emp_plugin input[type="file"] {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: #fdfdfd;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+}
+
+.wp_crud_emp_plugin input:focus,
+.wp_crud_emp_plugin select:focus {
+    border-color: #0073aa;
+    outline: none;
+}
+
+/* Submit button */
+.wp_crud_emp_plugin button[type="submit"] {
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.wp_crud_emp_plugin button[type="submit"]:hover {
+    background: #006799;
+}
+
+/* Employee Table */
+.wp_crud_emp_plugin table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.wp_crud_emp_plugin table th,
+.wp_crud_emp_plugin table td {
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.wp_crud_emp_plugin table th {
+    background: #f8f8f8;
+    font-weight: 600;
+}
+
+.wp_crud_emp_plugin table tr:nth-child(even) {
+    background: #fafafa;
+}
+
+/* Action buttons */
+.wp_crud_emp_plugin .edit-btn,
+.wp_crud_emp_plugin .delete-btn,
+.add_new_btn {
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    margin-right: 6px;
+    transition: background 0.2s ease;
+}
+
+.wp_crud_emp_plugin .edit-btn {
+    background: #46b450;
+    color: #fff;
+}
+
+.add_new_btn {
+    background: #46b450;
+    color: #fff;
+}
+.wp_crud_emp_plugin .edit-btn:hover {
+    background: #369b3d;
+}
+
+.wp_crud_emp_plugin .delete-btn {
+    background: #dc3232;
+    color: #fff;
+}
+
+.wp_crud_emp_plugin .delete-btn:hover {
+    background: #b61e1e;
+}
+.wp_crud_emp_plugin label.error{
+    color: #ff0000;
+}
+.d-none{
+    display: none;
+}
+/* Responsive */
+@media (max-width: 600px) {
+    .wp_crud_emp_plugin {
+        padding: 15px;
+    }
+
+    .wp_crud_emp_plugin table th,
+    .wp_crud_emp_plugin table td {
+        font-size: 13px;
+        padding: 8px;
+    }
+}

@@ -10,6 +10,9 @@ Plugin URI: getmysite.in
 // create constaint
 define('CSV_PLUGIN_PATH',plugin_dir_path(__FILE__));
 
+
+// show create table tablename to get code for database
+
 add_shortcode('csv_file_data','csv_display_form_data');
 
 function csv_display_form_data(){
@@ -29,11 +32,12 @@ function csv_display_form_data(){
 
 }
 
-// SQL COMMAND GENERATE BY DATABASE
+
+// when plugin activate run hook of function
+register_activation_hook(__FILE__,'csv_table_create_in_activation');
+
 
 // show create table table_name;
-
-register_activation_hook(__FILE__,'csv_table_create_in_activation');
 
 function csv_table_create_in_activation(){
 

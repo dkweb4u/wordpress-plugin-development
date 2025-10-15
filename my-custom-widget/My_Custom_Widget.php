@@ -16,7 +16,7 @@ class My_Custom_Widget extends WP_Widget{
     // display widget
     public function form( $instance ) {
 
-        print_r($instance);
+        // print_r($instance);
 
 ?>
 <p>
