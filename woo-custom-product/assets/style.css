@@ -1,0 +1,43 @@
+  .wcp_custom_plugin  .form-group {
+        margin-bottom: 15px;
+    }
+   .wcp_custom_plugin    label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 6px;
+        color: #444;
+    }
+  .wcp_custom_plugin     input[type="text"],
+    .wcp_custom_plugin   input[type="number"],
+   .wcp_custom_plugin    textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 15px;
+    }
+    .wcp_custom_plugin   textarea {
+        resize: vertical;
+        min-height: 80px;
+    }
+     .wcp_custom_plugin  input[type="file"] {
+        border: 1px solid #ccc;
+        padding: 8px;
+        width: 100%;
+        border-radius: 5px;
+        background: #fafafa;
+    }
+    .wcp_custom_plugin   button {
+        background: #0073aa;
+        color: #fff;
+        border: none;
+        padding: 12px 18px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px;
+    }
+   .wcp_custom_plugin    button:hover {
+        background: #005f8d;
+    }
