@@ -100,4 +100,8 @@ class Sample_Dk_Admin {
 
 	}
 
+  public function wcmessge_in_display(){
+		echo "<div class='notice notice-success '><p>Its Plugin Message</p></div>";
+	}
+
 }

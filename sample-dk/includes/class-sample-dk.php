@@ -156,6 +156,8 @@ class Sample_Dk {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		//  admin / main file for admin pages =>  notice
+		$this->loader->add_action('admin_notices',$plugin_admin,'wcmessge_in_display');
 
 	}
 
@@ -172,6 +174,8 @@ class Sample_Dk {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+        //  frontend / frontend file for public pages =>  method   
+		add_shortcode('show_my_name',[$plugin_public, 'sho_my_code']);
 
 	}
 

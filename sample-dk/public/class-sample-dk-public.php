@@ -100,4 +100,8 @@ class Sample_Dk_Public {
 
 	}
 
+	public function sho_my_code(){
+		return "<h1>Hello DKD</h1>";
+	}
+
 }
