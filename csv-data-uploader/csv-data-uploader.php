@@ -40,7 +40,7 @@ register_activation_hook(__FILE__,'csv_table_create_in_activation');
 // show create table table_name;
 
 function csv_table_create_in_activation(){
-
+    
     global $wpdb;
 
     $table_prefix = $wpdb->prefix;
