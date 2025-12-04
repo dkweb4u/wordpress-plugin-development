@@ -1,0 +1,52 @@
+function mytheme_header_customizer( $wp_customize ) {
+
+    // Panel
+    $wp_customize->add_section( 'mytheme_header_section', array(
+        'title'       => __( 'Header Settings', 'mytheme' ),
+        'description' => __( 'Customize your header logo and button.', 'mytheme' ),
+        'priority'    => 30,
+    ) );
+
+    // Logo upload
+    $wp_customize->add_setting( 'mytheme_header_logo' );
+
+    $wp_customize->add_control( new WP_Customize_Image_Control(
+        $wp_customize,
+        'mytheme_header_logo',
+        array(
+            'label'    => __( 'Upload Header Logo', 'mytheme' ),
+            'section'  => 'mytheme_header_section',
+            'settings' => 'mytheme_header_logo'
+        )
+    ) );
+
+    // Button Text
+    $wp_customize->add_setting( 'mytheme_header_btn_text', array(
+        'default' => 'Click Me',
+    ) );
+
+    $wp_customize->add_control( 'mytheme_header_btn_text', array(
+        'label'   => __( 'Header Button Text', 'mytheme' ),
+        'section' => 'mytheme_header_section',
+        'type'    => 'text'
+    ) );
+
+    // Button Link
+    $wp_customize->add_setting( 'mytheme_header_btn_link', array(
+        'default' => '#',
+    ) );
+
+    $wp_customize->add_control( 'mytheme_header_btn_link', array(
+        'label'   => __( 'Header Button Link', 'mytheme' ),
+        'section' => 'mytheme_header_section',
+        'type'    => 'url'
+    ) );
+
+}
+add_action( 'customize_register', 'mytheme_header_customizer' );
+
+
+// Visible or access
+// $logo = get_theme_mod('mytheme_header_logo');
+// $btn_text = get_theme_mod('mytheme_header_btn_text');
+// $btn_link = get_theme_mod('mytheme_header_btn_link');
